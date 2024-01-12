@@ -1,0 +1,16 @@
+syntax = "proto3";
+package chat;
+
+option go_package = "github.com/quangkhaidam93/go-web-server/chat";
+
+message Message {
+  string body = 1;
+}
+
+service ChatService {
+  rpc SayHello(Message) returns (Message) {}
+}
+
+
+
+
