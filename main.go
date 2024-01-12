@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -18,8 +17,6 @@ import (
 func main() {
 	// gRPC Server
 	go func() {
-		fmt.Println("khaidq hellow world")
-
 		lis, err := net.Listen("tcp", ":3002")
 
 		if err != nil {
@@ -38,7 +35,6 @@ func main() {
 	}()
 
 	// Http Server
-
 	if err := godotenv.Load(); err != nil {
 		log.Fatal(err)
 	}
@@ -69,5 +65,4 @@ func main() {
 	if err := router.Run(":3001"); err != nil {
 		panic("[Error] failed to start Gin server due to: " + err.Error())
 	}
-
 }
